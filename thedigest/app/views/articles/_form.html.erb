@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+  <div class="panel-heading"> Create A New Post </div>
+  <div class="panel-body">
+
+    <%= form_for(@article) do |f| %>
+      <% if @article.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@article.errors.count, "error") %> prohibited this <article></article> from being saved:</h2>
+
+          <ul>
+          <% @article.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :title %><br>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :author %><br>
+        <%= f.text_field :author, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :summary %><br>
+        <%= f.text_area :summary, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :img %><br>
+        <%= f.text_field :img, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :link %><br>
+        <%= f.text_field :link, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :tag_list %><br>
+        <%= f.text_field :tag_list, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.submit 'Create Article', class: 'btn btn-default' %>
+      </div>
+    <% end %>
+  </div>
+</div>
