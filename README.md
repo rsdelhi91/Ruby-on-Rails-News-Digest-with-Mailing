@@ -1,0 +1,1 @@
+# Ruby-on-Rails-News-Digest-with-Mailing
